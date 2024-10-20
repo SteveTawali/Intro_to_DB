@@ -1,5 +1,5 @@
-USE alx_book_store;
+-- Use the database passed as an argument
+USE ${1};
 
-SELECT table_name
-FROM information_schema.tables
-WHERE table_schema = 'alx_book_store';
+-- Show all tables in the selected database
+SHOW TABLES;
