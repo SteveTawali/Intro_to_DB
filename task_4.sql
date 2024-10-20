@@ -1,6 +1,5 @@
-USE alx_book_store;
-
-SELECT column_name, data_type, is_nullable, column_default
-FROM information_schema.columns
-WHERE table_name = 'books'
-AND table_schema = 'alx_book_store';
+-- Query the INFORMATION_SCHEMA.COLUMNS table to describe the structure of the 'Books' table
+SELECT COLUMN_NAME, COLUMN_TYPE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'alx_book_store' 
+  AND TABLE_NAME = 'Books';
