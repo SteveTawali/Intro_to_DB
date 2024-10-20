@@ -1,5 +1,5 @@
--- Use the database passed as an argument
-USE ${1};
+-- Select the database 'alx_book_store'
+USE alx_book_store;
 
--- Show all tables in the selected database
+-- Show all tables in the 'alx_book_store' database
 SHOW TABLES;
