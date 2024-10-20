@@ -6,8 +6,8 @@ def create_database():
         # Connect to MySQL server (without specifying a database for now)
         connection = mysql.connector.connect(
             host='localhost',  # Use your MySQL server host, usually localhost
-            user='root',  # Replace with your MySQL username
-            password='Katawaligulu@1'  # Replace with your MySQL password
+            user='your_user',  # Replace with your MySQL username
+            password='your_password'  # Replace with your MySQL password
         )
 
         if connection.is_connected():
@@ -16,16 +16,9 @@ def create_database():
             # Create a cursor object to interact with MySQL
             cursor = connection.cursor()
 
-            # Check if the database already exists
-            cursor.execute("SHOW DATABASES LIKE 'alx_book_store';")
-            result = cursor.fetchone()
-            
-            if result:
-                print("Database 'alx_book_store' already exists.")
-            else:
-                # Create the database if it doesn't exist
-                cursor.execute("CREATE DATABASE alx_book_store")
-                print("Database 'alx_book_store' created successfully!")
+            # Use CREATE DATABASE IF NOT EXISTS to avoid error if the database already exists
+            cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
+            print("Database 'alx_book_store' created successfully (if it didn't already exist).")
 
     except mysql.connector.Error as err:
         print(f"Error: {err}")
